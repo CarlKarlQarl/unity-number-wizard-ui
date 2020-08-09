@@ -16,27 +16,23 @@ public class NumberWizard : MonoBehaviour {
     }
 
     // Update is called once per frame
-    void Update() {
-        
-    }
+    void Update() {}
 
     void StartGame() {
-        guess = (max + min) / 2;
-        guessText.text = guess.ToString();
-        max = max + 1;
+        NextGuess();
     }
 
     public void OnPressHigher(){
-        min = guess;
+        min = guess + 1;
         NextGuess();
     }
     public void OnPressLower(){
-        max = guess;
+        max = guess - 1;
         NextGuess();
     }
 
     void NextGuess() {
-        guess = (max + min) / 2;
+        guess = Random.Range(min, max + 1);
         guessText.text = guess.ToString();
     }
 }
