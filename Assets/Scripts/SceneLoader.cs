@@ -8,4 +8,8 @@ public class SceneLoader : MonoBehaviour {
         int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
         SceneManager.LoadScene((currentSceneIndex + 1) % 3);
     }
+
+    public void QuitGame(){
+        Application.Quit();
+    }
 }
